@@ -10,8 +10,8 @@ const Body4 = () => {
 
     return (
         <div className='p-6'>
-            <div className='text-5xl font-semibold flex justify-center items-center'>Frequently Asked Questions (FAQ)</div>
-            <div className='mt-20 border p-4 rounded-lg shadow-md mx-32'>
+            <div className='lg:text-5xl md:text-3xl text-xl font-semibold flex justify-center items-center'>Frequently Asked Questions (FAQ)</div>
+            <div className='mt-20 border p-4 rounded-lg shadow-md lg:mx-32 md:mx-10 mx-1'>
                 <div className='flex justify-between items-center cursor-pointer border-b' onClick={handleOpen}>
                     <div className='text-lg font-medium'>What is quotation in business?</div>
                     <div className='text-xl'>{open ? <FiMinus /> : <FiPlus />}</div>
@@ -22,7 +22,7 @@ const Body4 = () => {
                     </div>
                 )}
             </div>
-            <div className='my-5 border p-4 rounded-lg shadow-md mx-32'>
+            <div className='my-5 border p-4 rounded-lg shadow-md lg:mx-32 md:mx-10 mx-1'>
                 <div className='flex justify-between items-center cursor-pointer border-b' onClick={handleOpen}>
                     <div className='text-lg font-medium'>What is quotation in business?</div>
                     <div className='text-xl'>{open ? <FiMinus /> : <FiPlus />}</div>
@@ -33,7 +33,7 @@ const Body4 = () => {
                     </div>
                 )}
             </div>
-            <div className='border p-4 rounded-lg shadow-md mx-32'>
+            <div className='border p-4 rounded-lg shadow-md lg:mx-32 md:mx-10 mx-1'>
                 <div className='flex justify-between items-center cursor-pointer border-b' onClick={handleOpen}>
                     <div className='text-lg font-medium'>What is quotation in business?</div>
                     <div className='text-xl'>{open ? <FiMinus /> : <FiPlus />}</div>

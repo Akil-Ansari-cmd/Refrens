@@ -31,37 +31,46 @@ const Body2 = () => {
 
   return (
     <div className=''>
-      <div className='text-lg flex items-center justify-center h-14 bg-[#E9E0F9]'>
+      <div className='md:text-lg text-base flex items-center justify-center h-14 bg-[#E9E0F9]'>
         Trusted & Loved by 1 Lakh+ businesses in India
       </div>
-      <div className='mt-14 text-4xl flex justify-center items-center'>
+      <div className='mt-14 md:text-4xl text-xl flex justify-center items-center'>
         Make Your Quotation in Less than 2 Minutes
       </div>
       <div className='flex justify-center items-center mt-7'>
         <div className='flex gap-3'>
-          <div className='h-5 w-5 flex justify-center items-center text-white rounded-full  mt-0.5'>1</div>
+          <div className='h-5 w-5 flex justify-center items-center text-white rounded-full bg-[#7D3BDF] mt-0.5'>1</div>
           <div>Add Quotation Details</div>
         </div>
-        <div><IoInformationCircleOutline className='text-gray-400 ml-5' /></div>
-        <div><IoIosArrowForward className='mx-5' /></div>
+        <div><IoInformationCircleOutline className='text-gray-400 md:ml-5 ml-0' /></div>
+        <div><IoIosArrowForward className='md:mx-5 mx-0' /></div>
         <div className='flex gap-3'>
           <div className='h-5 w-5 flex justify-center items-center mt-0.5 rounded-full border border-gray-400'>2</div>
           <div>Customise & Share</div>
         </div>
-        <div><IoInformationCircleOutline className='text-gray-400 ml-5' /></div>
+        <div><IoInformationCircleOutline className='text-gray-400  md:ml-5 ml-0' /></div>
       </div>
       <div className='mt-14 h-fit
-       pb-6 mx-32 border border-gray-200 shadow-lg rounded-lg'>
+       pb-6 xl:mx-32 md:mx-16 mx-2 border border-gray-200 shadow-lg rounded-lg'>
         <div className='pt-10 text-4xl font-semibold mx-auto border-b border-black border-dotted w-fit'>Quotation</div>
-        <div className='flex mt-10 justify-between px-10'>
+        <div className="lg:hidden flex flex-col mx-auto my-8 items-center justify-center p-6 border-2 border-dashed rounded-lg w-72 h-40 cursor-pointer hover:bg-gray-100">
+          <label className="flex flex-col items-center w-full h-full cursor-pointer">
+            <Upload className="text-purple-500" size={30} />
+            <span className="mt-2 text-sm font-semibold">Add Business Logo</span>
+            <span className="text-xs text-gray-500">Resolution up to 1080x1080px.</span>
+            <span className="text-xs text-gray-500">PNG or JPEG file.</span>
+            <input type="file" accept="image/png, image/jpeg" className="hidden" />
+          </label>
+        </div>
+        <div className='flex mt-10 justify-between md:px-10 px-2'>
           <div className='space-y-5'>
-            <div className='flex gap-10'>
-              <div className='text-xl mx-auto border-b border-black border-dotted w-fit'>Quotation No</div>
+            <div className='flex md:gap-10 gap-5'>
+              <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation No</div>
               <input type='text' placeholder='A000001' className='border-b outline-none placeholder:text-black border-black border-b-gray-400 w-60' />
             </div>
-            <div className='flex gap-10'>
-              <div className='text-xl mx-auto border-b border-black border-dotted w-fit'>Quotation Date</div>
-              <input type='date' className='border-b outline-none placeholder:text-black border-black border-b-gray-400 w-60' />
+            <div className='flex md:gap-10 gap-5'>
+              <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation Date</div>
+              <input type='date' className='border-b outline-none placeholder:text-black border-black border-b-gray-400 md:w-60 w-60' />
             </div>
             <div className='flex gap-2'>
               <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
@@ -73,7 +82,7 @@ const Body2 = () => {
             </div>
           </div>
           <div>
-            <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-lg w-72 h-40 cursor-pointer hover:bg-gray-100">
+            <div className="lg:flex hidden flex-col items-center justify-center p-6 border-2 border-dashed rounded-lg w-72 h-40 cursor-pointer hover:bg-gray-100">
               <label className="flex flex-col items-center w-full h-full cursor-pointer">
                 <Upload className="text-purple-500" size={30} />
                 <span className="mt-2 text-sm font-semibold">Add Business Logo</span>
@@ -84,8 +93,8 @@ const Body2 = () => {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-2'>
-          <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border border-gray-200">
+        <div className='lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5 md:px-10 px-3'>
+          <div className="w-full mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border border-gray-200">
 
             <div className="text-xl font-semibold border-b border-dotted pb-1">
               Quotation From <span className="text-gray-500 text-sm">(Your Details)</span>
@@ -157,7 +166,7 @@ const Body2 = () => {
               <span>Add Custom Fields</span>
             </div>
           </div>
-          <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border border-gray-200">
+          <div className="w-full mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border border-gray-200">
 
             <div className="text-xl font-semibold border-b border-dotted pb-1">
               Quotation From <span className="text-gray-500 text-sm">(Client Details)</span>
@@ -232,12 +241,12 @@ const Body2 = () => {
           <div><input type='checkbox' className='w-4 h-4' /></div>
           <div>Add Shipping Details</div>
         </div>
-        <div className='grid grid-cols-3 mt-10 mx-7 gap-5'>
+        <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mt-10 mx-7 gap-5'>
           <div className='flex border border-gray-400 p-1 rounded-md justify-center items-center gap-3'>
             <div><MdPercent className='text-purple-600' /></div>
             <div>Edit GST</div>
           </div>
-          <div className='flex border border-gray-400 p-1 rounded-md justify-center items-center gap-3'>
+          <div className='md:flex hidden border border-gray-400 p-1 rounded-md justify-center items-center gap-3'>
             <div>Indian Rupees(INR, ₹)</div>
           </div>
           <div className='flex border border-gray-400 p-1 rounded-md justify-center items-center gap-1'>
@@ -245,18 +254,20 @@ const Body2 = () => {
             <div>Edit Columns/Formulas</div>
           </div>
         </div>
-        <div className='mt-10'>
-          <div className="mx-7 bg-white shadow-lg rounded-lg">
-            <div className="bg-purple-600 text-white font-semibold p-3 flex justify-between rounded-t-lg">
-              <span>Item</span>
-              <span>Quantity</span>
-              <span>Rate</span>
-              <span>Amount</span>
+        <div className="mt-10">
+          <div className="mx-4 sm:mx-7 bg-white shadow-lg rounded-lg overflow-hidden">
+            {/* Table Header */}
+            <div className="bg-purple-600 text-white font-semibold p-3 flex justify-between rounded-t-lg text-xs sm:text-sm">
+              <span className="flex-1 text-left">Item</span>
+              <span className="w-16 text-center">Qty</span>
+              <span className="w-16 text-center">Rate</span>
+              <span className="w-20 text-center">Amount</span>
             </div>
 
+            {/* Items List */}
             {items.map((item) => (
-              <div key={item.id} className="p-4 border-b flex items-center justify-between">
-                <span className="flex-1">Item Name</span>
+              <div key={item.id} className="p-4 border-b flex flex-wrap sm:flex-nowrap items-center justify-between text-xs sm:text-sm">
+                <span className="flex-1 min-w-0 truncate">Item Name</span>
                 <input
                   type="number"
                   value={item.quantity}
@@ -269,31 +280,33 @@ const Body2 = () => {
               </div>
             ))}
 
-            <div className="p-4 flex items-center space-x-6 text-purple-600">
-              <button className="flex items-center space-x-2">
+            {/* Action Buttons */}
+            <div className="p-4 flex flex-wrap sm:flex-nowrap items-center justify-center space-x-2 space-y-2 sm:space-y-0 text-purple-600">
+              <button className="flex items-center space-x-1 text-xs sm:text-sm">
                 <FaPlus />
                 <span>Add Description</span>
               </button>
-              <button className="flex items-center space-x-2">
+              <button className="flex items-center space-x-1 text-xs sm:text-sm">
                 <FaImage />
                 <span>Add Thumbnail</span>
               </button>
-              <button className="flex items-center space-x-2">
+              <button className="flex items-center space-x-1 text-xs sm:text-sm">
                 <FaBalanceScale />
                 <span>Add Unit</span>
               </button>
-              <select className="border p-1 rounded">
+              <select className="border p-1 rounded text-xs sm:text-sm">
                 <option>Product</option>
                 <option>Service</option>
               </select>
-              <button className="flex items-center space-x-2" onClick={addItem}>
+              <button className="flex items-center space-x-1 text-xs sm:text-sm" onClick={addItem}>
                 <FaClone />
                 <span>Duplicate</span>
               </button>
             </div>
 
+            {/* Add New Line Button */}
             <button
-              className="w-full p-3 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2"
+              className="w-full p-3 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm"
               onClick={addItem}
             >
               <FaPlus />
@@ -302,7 +315,7 @@ const Body2 = () => {
           </div>
         </div>
         <div>
-          <div className='flex flex-col ml-96 pl-60 mt-10'>
+          <div className='flex flex-col lg:ml-96 md:ml-20 ml-0 md:pl-60 pl-0 mt-10'>
             <div className='flex mt-3 mx-7 gap-2'>
               <div><MdOutlineDiscount className='w-4 h-4 mt-1 text-purple-600' /></div>
               <div className='text-gray-500'>Add Discounts/Additional Charges</div>
@@ -326,7 +339,7 @@ const Body2 = () => {
               <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
               <div className='text-gray-500'>Add More Fields</div>
             </div>
-            <div className='flex px-7'>
+            <div className='flex gap-2 px-7'>
               <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
               <div className='text-gray-500'>Show Total In Words</div>
             </div>
@@ -338,7 +351,7 @@ const Body2 = () => {
             </div>
           </div>
           <div className=' mt-5'>
-            <div className='grid grid-cols-3 mx-7 gap-5'>
+            <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mx-7 gap-5'>
               <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
                 <div><CiSquarePlus className='text-purple-600' /></div>
                 <div>Add Terms & Conditions</div>
