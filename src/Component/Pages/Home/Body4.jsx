@@ -9,7 +9,7 @@ const Body4 = () => {
     };
 
     return (
-        <div className='p-6'>
+        <div className='p-6 bg-slate-50'>
             <div className='lg:text-5xl md:text-3xl text-xl font-semibold flex justify-center items-center'>Frequently Asked Questions (FAQ)</div>
             <div className='mt-20 border p-4 rounded-lg shadow-md lg:mx-32 md:mx-10 mx-1'>
                 <div className='flex justify-between items-center cursor-pointer border-b' onClick={handleOpen}>

@@ -86,7 +86,7 @@ const Body3 = () => {
         <div className='flex justify-center items-center py-8 text-5xl text-white font-semibold'>Happy Customers</div>
         <div className='lg:grid hidden grid-cols-2 px-52 pt-16 gap-16'>
           <div className='border border-black rounded-lg bg-white  pb-10'>
-            <div><img className='h-16 w-16  relative bottom-10 left-28' src='https://assets.refrens.com/292_Aniket_Refrens_Invoice_Software_User_eeaa17c00c.webp' /></div>
+            <div><img className='h-16 w-16  relative bottom-10 mx-auto' src='https://assets.refrens.com/292_Aniket_Refrens_Invoice_Software_User_eeaa17c00c.webp' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and </div>
               <div>it’s value for money.</div>
@@ -95,7 +95,7 @@ const Body3 = () => {
             </div>
           </div>
           <div className='border border-black  rounded-lg bg-white'>
-            <div><img className='h-16 w-16 relative bottom-10 left-28' src='https://assets.refrens.com/406_snehal_f436be07b2.webp' /></div>
+            <div><img className='h-16 w-16 relative bottom-10 mx-auto' src='https://assets.refrens.com/406_snehal_f436be07b2.webp' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and</div>
               <div>changer</div>
@@ -104,7 +104,7 @@ const Body3 = () => {
             </div>
           </div>
           <div className='border border-black  rounded-lg bg-white pb-10'>
-            <div><img className='h-16 w-16 relative bottom-10 left-28 rounded-full' src='https://assets.refrens.com/144_Nayan_ba88068972.webp' /></div>
+            <div><img className='h-16 w-16 relative bottom-10 mx-auto rounded-full' src='https://assets.refrens.com/144_Nayan_ba88068972.webp' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and</div>
               <div>changer</div>
@@ -113,7 +113,7 @@ const Body3 = () => {
             </div>
           </div>
           <div className='border border-black  rounded-lg bg-white'>
-            <div><img className='h-16 w-16 relative bottom-10 left-28  rounded-full' src='https://assets.refrens.com/108_linkee_cae93493da.webp' /></div>
+            <div><img className='h-16 w-16 relative bottom-10 mx-auto  rounded-full' src='https://assets.refrens.com/108_linkee_cae93493da.webp' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and</div>
               <div>changer</div>
@@ -122,7 +122,7 @@ const Body3 = () => {
             </div>
           </div>
           <div className='border border-black  rounded-lg bg-white  pb-10'>
-            <div><img className='h-16 w-16 relative bottom-10 left-28 rounded-full' src='https://assets.refrens.com/100_radiosparx_royalty_free_music_f299666562.webp' /></div>
+            <div><img className='h-16 w-16 relative bottom-10 mx-auto rounded-full' src='https://assets.refrens.com/100_radiosparx_royalty_free_music_f299666562.webp' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and</div>
               <div>changer</div>
@@ -131,7 +131,7 @@ const Body3 = () => {
             </div>
           </div>
           <div className='border border-black  rounded-lg bg-white'>
-            <div><img className='h-16 w-16 relative bottom-10 left-28 rounded-full' src='https://assets.refrens.com/himanshu_v2_82aa38ad14.jpeg' /></div>
+            <div><img className='h-16 w-16 relative bottom-10 mx-auto rounded-full' src='https://assets.refrens.com/himanshu_v2_82aa38ad14.jpeg' /></div>
             <div className='flex flex-col px-12 justify-center items-center'>
               <div>Tally was too complicated for me. Zoho? too expensive. Refrens just hits that right sweet spot - It’s simple, It’s feature-rich, and</div>
               <div>changer</div>
