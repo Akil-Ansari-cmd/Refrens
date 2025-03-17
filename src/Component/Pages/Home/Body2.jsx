@@ -37,9 +37,9 @@ const Body2 = () => {
 
   const formik = useFormik({
     initialValues: {
-      quano:"",
-      quadate:"",
-      logo:"",
+      quano: "",
+      quadate: "",
+      logo: null,
       name: "",
       id: null,
       country: "",
@@ -49,6 +49,14 @@ const Body2 = () => {
       city: "",
       zipcode: "",
       state: "",
+      clientname: "",
+      clientcountry: "",
+      clientmobile: null,
+      clientgst: "",
+      clientaddress: "",
+      clientcity: "",
+      clientzipcode: "",
+      clientstate: "",
       items: [{ id: 1, name: "", quantity: 1, rate: 1, amount: 1 }],
     },
     enableReinitialize: true,
@@ -97,14 +105,14 @@ const Body2 = () => {
               <div className='flex md:gap-10 gap-5'>
                 <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation No</div>
                 <input type='text' value={formik.values?.quano}
-                onChange={formik?.handleChange}
-                name="quano" placeholder='A000001' className='border-b outline-none placeholder:text-black border-gray-400 border-b-gray-400 w-60' />
+                  onChange={formik?.handleChange}
+                  name="quano" placeholder='A000001' className='border-b outline-none placeholder:text-black border-gray-400 border-b-gray-400 w-60' />
               </div>
               <div className='flex md:gap-10 gap-5'>
                 <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation Date</div>
                 <input type='date' value={formik.values?.quadate}
-                onChange={formik?.handleChange}
-                name="quadate" className='border-b outline-none placeholder:text-black border-black border-b-gray-400 md:w-60 w-60' />
+                  onChange={formik?.handleChange}
+                  name="quadate" className='border-b outline-none placeholder:text-black border-black border-b-gray-400 md:w-60 w-60' />
               </div>
               <div className='flex gap-2'>
                 <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
@@ -221,33 +229,40 @@ const Body2 = () => {
               </div>
             </div>
             <div className="w-full mx-auto mt-10 p-6 bg-slate-50 rounded-lg">
-
               <div className="text-xl font-semibold border-b border-dotted pb-1">
-                Quotation From <span className="text-gray-500 text-sm">(Client Details)</span>
+                Quotation For <span className="text-gray-500 text-sm">(Client Details)</span>
               </div>
-
-
-              <div className="mt-4 flex items-center justify-between cursor-pointer border-b pb-2">
-                <span>India</span>
-                <IoIosArrowDown className="text-gray-500" />
-              </div>
-
-
               <input
                 type="text"
+                value={formik.values?.clientcountry}
+                onChange={formik?.handleChange}
+                name="clientcountry"
+                placeholder="Your State (optional)"
+                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+              />
+              <input
+                type="text"
+                value={formik.values?.clientname}
+                onChange={formik?.handleChange}
+                name="clientname"
                 placeholder="Your Business Name (Required)"
+                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+              />
+              <input
+                type="text"
+                value={formik.values?.clientmobile}
+                onChange={formik?.handleChange}
+                name="clientmobile"
+                placeholder="+91"
                 className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
               />
 
 
-              <div className="flex items-center mt-4 border-b pb-2">
-                <span className="mr-2">🇮🇳</span>
-                <span className="text-gray-700">+91</span>
-              </div>
-
-
               <input
                 type="text"
+                value={formik.values?.clientgst}
+                onChange={formik?.handleChange}
+                name="clientgst"
                 placeholder="Your GSTIN (optional)"
                 className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
               />
@@ -255,27 +270,42 @@ const Body2 = () => {
 
               <input
                 type="text"
+                value={formik.values?.clientaddress}
+                onChange={formik?.handleChange}
+                name="clientaddress"
                 placeholder="Address (optional)"
                 className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
               />
 
+
               <div className="flex gap-4 mt-4">
                 <input
                   type="text"
+                  value={formik.values?.clientcity}
+                  onChange={formik?.handleChange}
+                  name="clientcity"
                   placeholder="City (optional)"
                   className="w-1/2 border-b bg-slate-50 p-2 outline-none"
                 />
                 <input
                   type="text"
+                  value={formik.values?.clientzipcode}
+                  onChange={formik?.handleChange}
+                  name="clientzipcode"
                   placeholder="Postal Code / Zip Code"
                   className="w-1/2 border-b bg-slate-50 p-2 outline-none"
                 />
               </div>
 
-              <div className="mt-4 flex items-center justify-between cursor-pointer border-b pb-2">
-                <span>State (optional)</span>
-                <IoIosArrowDown className="text-gray-500" />
-              </div>
+
+              <input
+                type="text"
+                value={formik.values?.clientstate}
+                onChange={formik?.handleChange}
+                name="clientstate"
+                placeholder="Your State (optional)"
+                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+              />
 
 
               <div className="flex items-center mt-4 text-purple-600 cursor-pointer">
@@ -308,147 +338,247 @@ const Body2 = () => {
               <div>Edit Columns/Formulas</div>
             </div>
           </div>
-          <div className="mt-5 md:mx-10 mx-2">
-            {/* Invoice Items Section */}
-            <div className="bg-purple-600 text-white font-semibold p-3 flex justify-between rounded-t-lg text-xs sm:text-sm">
-              <span className="flex-1 text-left">Item</span>
-              <span className="w-16 text-center hidden sm:block">Qty</span>
-              <span className="w-16 text-center hidden sm:block">Rate</span>
-              <span className="w-20 text-center hidden sm:block">Amount</span>
+          <div className="mt-5 lg:block hidden md:mx-10 mx-2">
+            <div className="bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold p-4 flex justify-between items-center rounded-t-lg text-xs sm:text-sm shadow-md">
+              <div>Item</div>
+              <div className='flex gap-32 px-72'>
+                <div>Quantity</div>
+                <div>Rate</div>
+                <div>Amount</div>
+              </div>
             </div>
-
-           
             {formik.values.items.map((item) => (
-              <div key={item.id} className="p-4 border-b bg-gray-50 rounded-lg shadow-sm">
-              
-                <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 sm:gap-3">
+              <div className='bg-slate-50 py-10 px-5 mt-4'>
+                <div key={item.id} className='flex'>
                   <input
                     type="text"
                     value={item.name}
                     placeholder="Item Name"
-                    className="col-span-2 sm:col-span-1 border p-2 rounded w-full"
+                    className="col-span-2 sm:col-span-1 bg-slate-50 border-b p-3 rounded-md w-[35%] outline-none "
                     onChange={(e) => updateItem(item.id, "name", e.target.value)}
                   />
                   <input
-                    type="number"
+                    type="text"
                     value={item.quantity}
-                    className="border p-2 text-center rounded w-full sm:w-16"
+                    className="col-span-2 sm:col-span-1 bg-slate-50 border-b p-3 rounded-md w-[20%] outline-none "
                     onChange={(e) => updateItem(item.id, "quantity", parseFloat(e.target.value) || 0)}
                   />
                   <input
-                    type="number"
+                    type="text"
                     value={item.rate}
-                    className="border p-2 text-center rounded w-full sm:w-16"
+                    className="col-span-2 sm:col-span-1 bg-slate-50 border-b p-3 rounded-md w-[20%] outline-none "
                     onChange={(e) => updateItem(item.id, "rate", parseFloat(e.target.value) || 0)}
                   />
                   <span className="text-center font-bold sm:w-20">₹ {item.amount.toFixed(2)}</span>
-                  <FaTimes className="text-gray-500 cursor-pointer sm:w-6" onClick={() => removeItem(item.id)} />
+                  <FaTimes
+                    className="text-gray-500 cursor-pointer sm:w-6 hover:text-red-500 transition-all duration-200"
+                    onClick={() => removeItem(item.id)}
+                  />
                 </div>
-
-                <div className="flex flex-wrap items-center justify-start gap-2 mt-3 text-purple-600 text-xs sm:text-sm">
-                  <button className="flex items-center space-x-1">
-                    <FaPlus />
-                    <span>Add Description</span>
-                  </button>
-                  <button className="flex items-center space-x-1">
-                    <FaImage />
-                    <span>Add Thumbnail</span>
-                  </button>
-                  <button className="flex items-center space-x-1">
-                    <FaBalanceScale />
-                    <span>Add Unit</span>
-                  </button>
+                <div className='flex justify-between mt-5'>
+                  <div className='flex gap-16'>
+                    <div className='flex gap-2'>
+                      <div><FaPlus className='text-purple-500 mt-1' /></div>
+                      <div className='text-gray-500'>Add Description</div>
+                    </div>
+                    <div className='flex gap-2'>
+                      <div><FaImage className='text-purple-500 mt-1' /></div>
+                      <div className='text-gray-500'>Add Thumbnail</div>
+                    </div>
+                  </div>
+                  <div onClick={addItem}  className='flex gap-2 px-20 cursor-pointer'>
+                    <div><FaClone className='text-purple-500 mt-1' /></div>
+                    <div className='text-gray-500'>Duplicate</div>
+                  </div>
+                </div>
+                <div className='flex mt-5 gap-24'>
+                  <div className='flex gap-2'>
+                    <div><FaBalanceScale className='text-purple-500 mt-1' /></div>
+                    <div className='text-gray-500'>Add Unit</div>
+                  </div>
                   <select
-                    className="border p-1 rounded w-full sm:w-auto"
+                    className="rounded-md text-gray-500 bg-slate-50 w-[25%] border-b outline-none "
                     value={item.type}
                     onChange={(e) => updateItem(item.id, "type", e.target.value)}
                   >
                     <option>Product</option>
                     <option>Service</option>
                   </select>
-                  <button className="flex items-center space-x-1">
-                    <FaClone />
-                    <span>Duplicate</span>
-                  </button>
                 </div>
               </div>
             ))}
-
             <button
               type="button"
-              className="w-full p-3 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm mt-3 rounded"
+              className="w-full p-4 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm mt-4 rounded-md hover:bg-purple-200 transition-all"
               onClick={addItem}
             >
               <FaPlus />
               <span>Add New Line</span>
             </button>
           </div>
-          {formik.values.items.map((item) => (
-          <div>
-            <div key={item} className='flex flex-col lg:ml-96 md:ml-20 ml-0 md:pl-60 pl-0 mt-10'>
-              <div className='flex mt-3 mx-7 gap-2'>
-                <div><MdOutlineDiscount className='w-4 h-4 mt-1 text-purple-600' /></div>
-                <div className='text-gray-500'>Add Discounts/Additional Charges</div>
-              </div>
-              <div className='flex mt-3 mx-7 gap-2'>
-                <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
-                <div className='text-gray-500'>Hide Totals</div>
-              </div>
-              <div className='flex mt-3 mx-7 gap-2 border-b border-gray-300 pb-5'>
-                <div><input type='checkbox' className='w-4 h-4' /></div>
-                <div className='text-gray-500'>Add Shipping Details</div>
-              </div>
-              <div className='flex justify-between px-5 mx-7 text-2xl border-b border-gray-300'>
-                <div className='flex gap-3 py-4'>
-                  <div className='font-semibold border-b border-black border-dashed'>TOTAL</div>
-                  <div>(INR)</div>
-                </div>
-                <div className='font-semibold py-4'>₹ {item.amount.toFixed(2)}</div>
-              </div>
-              <div className='flex gap-2 px-7 py-5'>
-                <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
-                <div className='text-gray-500'>Add More Fields</div>
-              </div>
-              <div className='flex gap-2 px-7'>
-                <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
-                <div className='text-gray-500'>Show Total In Words</div>
-              </div>
-              <div className='grid grid-cols-1 px-7 mt-4'>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                  <div><LuSignature className='text-purple-600' /></div>
-                  <div>Add Signature</div>
-                </div>
-              </div>
+
+          <div className='mt-5 lg:hidden block mx-6'>
+            <div className="bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold p-4 flex justify-between items-center rounded-t-lg text-xs sm:text-sm shadow-md">
+              <div>Item</div>
             </div>
-            <div className=' mt-5'>
-              <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mx-7 gap-5'>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                  <div><CiSquarePlus className='text-purple-600' /></div>
-                  <div>Add Terms & Conditions</div>
+            {formik.values.items.map((item) => (
+              <div className='mt-4 px-5 space-y-5 bg-slate-50 py-5' key={item.id}>
+                <div className='flex justify-between'>
+                  <div>01</div>
+                  <div className='flex gap-5'>
+                    <div onClick={addItem}><FaClone className='text-slate-400' /></div>
+                    <div><FaTimes
+                      className="text-gray-500 cursor-pointer sm:w-6 hover:text-red-500 transition-all duration-200"
+                      onClick={() => removeItem(item.id)}
+                    /></div>
+                  </div>
                 </div>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                  <div><TbNotes className='text-purple-600' /></div>
-                  <div>Add Notes</div>
+                <div className='flex md:gap-28 gap-7'>
+                  <div>Item</div>
+                  <div><input
+                    type="text"
+                    value={item.name}
+                    placeholder="Item Name"
+                    className="col-span-2 sm:col-span-1 bg-slate-50 border-b md:w-96 w-auto outline-none "
+                    onChange={(e) => updateItem(item.id, "name", e.target.value)}
+                  /></div>
                 </div>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                  <div><IoDocumentOutline className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                  <div>Add Documents</div>
+                <div className='flex gap-2'>
+                  <div><FaPlus className='text-purple-500 mt-1' /></div>
+                  <div className='text-gray-500'>Add Description</div>
                 </div>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                  <div><TbNotes className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                  <div>Add Additional Info</div>
+                <div className='md:flex flex-none md:space-y-0 space-y-5'>
+                  <div className='flex md:gap-7 gap-3'>
+                    <div>Quantity</div>
+                    <div className='md:pl-0 pl-3'>
+                      <input
+                        type="text"
+                        value={item.quantity}
+                        className="col-span-2 sm:col-span-1 bg-slate-50 border-b  w-44 outline-none "
+                        onChange={(e) => updateItem(item.id, "quantity", parseFloat(e.target.value) || 0)}
+                      />
+                    </div>
+                  </div>
+                  <div className='space-y-5'>
+                    <div className='flex gap-7'>
+                      <div>Rate</div>
+                      <div className='pl-6'>
+                        <input
+                          type="text"
+                          value={item.rate}
+                          className="col-span-2 sm:col-span-1 bg-slate-50 border-b  w-44 outline-none "
+                          onChange={(e) => updateItem(item.id, "rate", parseFloat(e.target.value) || 0)}
+                        />
+                      </div>
+                    </div>
+                    <div className='flex gap-7'>
+                      <div>Amount</div>
+                      <div className="col-span-2 sm:col-span-1 bg-slate-50 border-b  w-44 outline-none ">
+                        ₹ {item.amount.toFixed(2)}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                  <div><PiGridFourLight className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                  <div>Add Contact Details</div>
+                <div className='border border-dashed w-fit p-2 px-5 rounded-md'>
+                  <div className='flex gap-2'>
+                    <div><FaImage className='text-purple-500 mt-1' /></div>
+                    <div className='text-gray-500'>Add Thumbnail</div>
+                  </div>
+                </div>
+                <div className='flex mt-5 gap-24'>
+                  <div className='flex gap-2'>
+                    <div><FaBalanceScale className='text-purple-500 mt-1' /></div>
+                    <div className='text-gray-500'>Add Unit</div>
+                  </div>
+                </div>
+                <div>
+                  <select
+                    className="rounded-md bg-slate-50 w-full border-b outline-none "
+                    value={item.type}
+                    onChange={(e) => updateItem(item.id, "type", e.target.value)}
+                  >
+                    <option>Product</option>
+                    <option>Service</option>
+                  </select>
                 </div>
               </div>
-            </div>
-            <button type='submit' className='bg-[#E6007B] text-white my-7 flex justify-center items-center mx-auto w-40 mt-7 h-10 rounded-md'>
-              Save & Continue
+            ))}
+            <button
+              type="button"
+              className="w-full p-3 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm mt-2 rounded-md hover:bg-purple-200 transition-all"
+              onClick={addItem}
+            >
+              <FaPlus />
+              <span>Add New Line</span>
             </button>
           </div>
-        ))}
+
+          {formik.values.items.map((item) => (
+            <div>
+              <div key={item} className='flex flex-col lg:ml-96 md:ml-20 ml-0 md:pl-60 pl-0 mt-10'>
+                <div className='flex mt-3 mx-7 gap-2'>
+                  <div><MdOutlineDiscount className='w-4 h-4 mt-1 text-purple-600' /></div>
+                  <div className='text-gray-500'>Add Discounts/Additional Charges</div>
+                </div>
+                <div className='flex mt-3 mx-7 gap-2'>
+                  <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
+                  <div className='text-gray-500'>Hide Totals</div>
+                </div>
+                <div className='flex mt-3 mx-7 gap-2 border-b border-gray-300 pb-5'>
+                  <div><input type='checkbox' className='w-4 h-4' /></div>
+                  <div className='text-gray-500'>Add Shipping Details</div>
+                </div>
+                <div className='flex justify-between px-5 mx-7 text-2xl border-b border-gray-300'>
+                  <div className='flex gap-3 py-4'>
+                    <div className='font-semibold border-b border-black border-dashed'>TOTAL</div>
+                    <div>(INR)</div>
+                  </div>
+                  <div className='font-semibold py-4'>₹ {item.amount.toFixed(2)}</div>
+                </div>
+                <div className='flex gap-2 px-7 py-5'>
+                  <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
+                  <div className='text-gray-500'>Add More Fields</div>
+                </div>
+                <div className='flex gap-2 px-7'>
+                  <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
+                  <div className='text-gray-500'>Show Total In Words</div>
+                </div>
+                <div className='grid grid-cols-1 px-7 mt-4'>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                    <div><LuSignature className='text-purple-600' /></div>
+                    <div>Add Signature</div>
+                  </div>
+                </div>
+              </div>
+              <div className=' mt-5'>
+                <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mx-7 gap-5'>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                    <div><CiSquarePlus className='text-purple-600' /></div>
+                    <div>Add Terms & Conditions</div>
+                  </div>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                    <div><TbNotes className='text-purple-600' /></div>
+                    <div>Add Notes</div>
+                  </div>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                    <div><IoDocumentOutline className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                    <div>Add Documents</div>
+                  </div>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                    <div><TbNotes className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                    <div>Add Additional Info</div>
+                  </div>
+                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                    <div><PiGridFourLight className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                    <div>Add Contact Details</div>
+                  </div>
+                </div>
+              </div>
+              <button type='submit' className='bg-[#E6007B] text-white my-7 flex justify-center items-center mx-auto w-40 mt-7 h-10 rounded-md'>
+                Save & Continue
+              </button>
+            </div>
+          ))}
         </div>
       </form>
       <div>

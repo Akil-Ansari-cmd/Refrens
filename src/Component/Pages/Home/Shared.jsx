@@ -1,8 +1,10 @@
 import React from 'react'
 import { FaArrowPointer } from 'react-icons/fa6'
 import { IoIosArrowDown } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom'
 
 const Shared = () => {
+    const Navigate = useNavigate();
     return (
         <div className='sticky z-50 top-0'>
             <div className='flex justify-between bg-[#7D3BDF] xl:px-28 lg:px-16 px-3 text-white'>
@@ -20,8 +22,8 @@ const Shared = () => {
                         <div><FaArrowPointer className='mt-1.5 text-[#E6007B]' /></div>
                         <div>Quick Guide</div>
                     </div>
-                    <div className=' pt-4'>Login</div>
-                    <div className='px-4 bg-[#E6007B] h-10 mt-2 rounded-md flex justify-center items-center'>Register</div>
+                    <div onClick={() => Navigate("/login")} className='cursor-pointer pt-4'>Login</div>
+                    <div onClick={() => Navigate("/Register")} className='px-4 bg-[#E6007B] cursor-pointer h-10 mt-2 rounded-md flex justify-center items-center'>Register</div>
                 </div>
             </div>
             <div className='lg:hidden flex gap-4 py-2 px-3 bg-white'>
