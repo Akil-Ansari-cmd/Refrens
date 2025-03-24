@@ -97,7 +97,7 @@ const Body2 = () => {
               <span className="mt-2 text-sm font-semibold">Add Business Logo</span>
               <span className="text-xs text-gray-500">Resolution up to 1080x1080px.</span>
               <span className="text-xs text-gray-500">PNG or JPEG file.</span>
-              <input type="file" accept="image/png, image/jpeg" className="hidden" />
+              <input type="file" onChange={(e) => formik.setFieldValue("logo", e.target.files[0])} accept="image/png, image/jpeg" className="hidden" />
             </label>
           </div>
           <div className='flex mt-10 justify-between md:px-10 px-2'>
@@ -106,13 +106,13 @@ const Body2 = () => {
                 <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation No</div>
                 <input type='text' value={formik.values?.quano}
                   onChange={formik?.handleChange}
-                  name="quano" placeholder='A000001' className='border-b outline-none placeholder:text-black border-gray-400 border-b-gray-400 w-60' />
+                  name="quano" placeholder='A000001' className='border-b outline-none placeholder:text-black border-gray-400 border-b-gray-200 w-60 hover:border-b-purple-500' />
               </div>
               <div className='flex md:gap-10 gap-5'>
                 <div className='md:text-xl text-base mx-auto border-b border-black border-dotted w-fit'>Quotation Date</div>
                 <input type='date' value={formik.values?.quadate}
                   onChange={formik?.handleChange}
-                  name="quadate" className='border-b outline-none placeholder:text-black border-black border-b-gray-400 md:w-60 w-60' />
+                  name="quadate" className='border-b outline-none placeholder:text-black border-black border-b-gray-200 md:w-60 w-60 hover:border-b-purple-500' />
               </div>
               <div className='flex gap-2'>
                 <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
@@ -130,7 +130,7 @@ const Body2 = () => {
                   <span className="mt-2 text-sm font-semibold">Add Business Logo</span>
                   <span className="text-xs text-gray-500">Resolution up to 1080x1080px.</span>
                   <span className="text-xs text-gray-500">PNG or JPEG file.</span>
-                  <input type="file" accept="image/png, image/jpeg" className="hidden" />
+                  <input type="file" onChange={(e) => formik.setFieldValue("logo", e.target.files[0])} accept="image/png, image/jpeg" className="hidden" />
                 </label>
               </div>
             </div>
@@ -146,7 +146,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="country"
                 placeholder="Your State (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
               <input
                 type="text"
@@ -154,7 +154,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="name"
                 placeholder="Your Business Name (Required)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
               <input
                 type="text"
@@ -162,7 +162,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="mobile"
                 placeholder="+91"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -172,7 +172,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="gst"
                 placeholder="Your GSTIN (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -182,7 +182,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="address"
                 placeholder="Address (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -193,7 +193,7 @@ const Body2 = () => {
                   onChange={formik?.handleChange}
                   name="city"
                   placeholder="City (optional)"
-                  className="w-1/2 border-b bg-slate-50 p-2 outline-none"
+                  className="w-1/2 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
                 />
                 <input
                   type="text"
@@ -201,7 +201,7 @@ const Body2 = () => {
                   onChange={formik?.handleChange}
                   name="zipcode"
                   placeholder="Postal Code / Zip Code"
-                  className="w-1/2 border-b bg-slate-50 p-2 outline-none"
+                  className="w-1/2 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
                 />
               </div>
 
@@ -212,7 +212,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="state"
                 placeholder="Your State (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -238,7 +238,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientcountry"
                 placeholder="Your State (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
               <input
                 type="text"
@@ -246,7 +246,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientname"
                 placeholder="Your Business Name (Required)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
               <input
                 type="text"
@@ -254,7 +254,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientmobile"
                 placeholder="+91"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -264,7 +264,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientgst"
                 placeholder="Your GSTIN (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -274,7 +274,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientaddress"
                 placeholder="Address (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -285,7 +285,7 @@ const Body2 = () => {
                   onChange={formik?.handleChange}
                   name="clientcity"
                   placeholder="City (optional)"
-                  className="w-1/2 border-b bg-slate-50 p-2 outline-none"
+                  className="w-1/2 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
                 />
                 <input
                   type="text"
@@ -293,7 +293,7 @@ const Body2 = () => {
                   onChange={formik?.handleChange}
                   name="clientzipcode"
                   placeholder="Postal Code / Zip Code"
-                  className="w-1/2 border-b bg-slate-50 p-2 outline-none"
+                  className="w-1/2 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
                 />
               </div>
 
@@ -304,7 +304,7 @@ const Body2 = () => {
                 onChange={formik?.handleChange}
                 name="clientstate"
                 placeholder="Your State (optional)"
-                className="w-full mt-4 border-b bg-slate-50 p-2 outline-none"
+                className="w-full mt-4 border-b hover:border-b-purple-500 bg-slate-50 p-2 outline-none"
               />
 
 
@@ -348,7 +348,7 @@ const Body2 = () => {
               </div>
             </div>
             {formik.values.items.map((item) => (
-              <div className='bg-slate-50 py-10 px-5 mt-4'>
+              <div className='bg-slate-50 py-5 px-5 mt-4'>
                 <div key={item.id} className='flex'>
                   <input
                     type="text"
@@ -386,7 +386,7 @@ const Body2 = () => {
                       <div className='text-gray-500'>Add Thumbnail</div>
                     </div>
                   </div>
-                  <div onClick={addItem}  className='flex gap-2 px-20 cursor-pointer'>
+                  <div onClick={addItem} className='flex gap-2 px-20 cursor-pointer'>
                     <div><FaClone className='text-purple-500 mt-1' /></div>
                     <div className='text-gray-500'>Duplicate</div>
                   </div>
@@ -409,7 +409,7 @@ const Body2 = () => {
             ))}
             <button
               type="button"
-              className="w-full p-4 bg-purple-100 text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm mt-4 rounded-md hover:bg-purple-200 transition-all"
+              className="w-full p-3 bg-white hover:bg-slate-100 border border-gray-400 border-dashed text-purple-600 flex items-center justify-center space-x-2 text-xs sm:text-sm mt-4 rounded-md transition-all"
               onClick={addItem}
             >
               <FaPlus />
@@ -513,72 +513,76 @@ const Body2 = () => {
             </button>
           </div>
 
-          {formik.values.items.map((item) => (
-            <div>
-              <div key={item} className='flex flex-col lg:ml-96 md:ml-20 ml-0 md:pl-60 pl-0 mt-10'>
-                <div className='flex mt-3 mx-7 gap-2'>
-                  <div><MdOutlineDiscount className='w-4 h-4 mt-1 text-purple-600' /></div>
-                  <div className='text-gray-500'>Add Discounts/Additional Charges</div>
+          {/* {formik.values.items.map((item) => ( */}
+          <div>
+            <div className='flex flex-col lg:ml-96 md:ml-20 ml-0 md:pl-60 pl-0 mt-10'>
+              <div className='flex mt-3 mx-7 gap-2'>
+                <div><MdOutlineDiscount className='w-4 h-4 mt-1 text-purple-600' /></div>
+                <div className='text-gray-500'>Add Discounts/Additional Charges</div>
+              </div>
+              <div className='flex mt-3 mx-7 gap-2'>
+                <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
+                <div className='text-gray-500'>Hide Totals</div>
+              </div>
+              <div className='flex mt-3 mx-7 gap-2 border-b border-gray-300 pb-5'>
+                <div><input type='checkbox' className='w-4 h-4' /></div>
+                <div className='text-gray-500'>Add Shipping Details</div>
+              </div>
+              <div className='flex justify-between px-5 mx-7 text-2xl border-b border-gray-300'>
+                <div className='flex gap-3 py-4'>
+                  <div className='font-semibold border-b border-black border-dashed'>TOTAL</div>
+                  <div>(INR)</div>
                 </div>
-                <div className='flex mt-3 mx-7 gap-2'>
-                  <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
-                  <div className='text-gray-500'>Hide Totals</div>
-                </div>
-                <div className='flex mt-3 mx-7 gap-2 border-b border-gray-300 pb-5'>
-                  <div><input type='checkbox' className='w-4 h-4' /></div>
-                  <div className='text-gray-500'>Add Shipping Details</div>
-                </div>
-                <div className='flex justify-between px-5 mx-7 text-2xl border-b border-gray-300'>
-                  <div className='flex gap-3 py-4'>
-                    <div className='font-semibold border-b border-black border-dashed'>TOTAL</div>
-                    <div>(INR)</div>
+                {/* {formik.values.items.map((item) => ( */}
+                  <div  className='item-row'>
+                    <div className='font-semibold py-4'>₹ {formik.values.items.reduce((acc, item) => acc + item.amount, 0).toFixed(2)}</div>
                   </div>
-                  <div className='font-semibold py-4'>₹ {item.amount.toFixed(2)}</div>
-                </div>
-                <div className='flex gap-2 px-7 py-5'>
-                  <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
-                  <div className='text-gray-500'>Add More Fields</div>
-                </div>
-                <div className='flex gap-2 px-7'>
-                  <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
-                  <div className='text-gray-500'>Show Total In Words</div>
-                </div>
-                <div className='grid grid-cols-1 px-7 mt-4'>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                    <div><LuSignature className='text-purple-600' /></div>
-                    <div>Add Signature</div>
-                  </div>
+                {/* ))} */}
+              </div>
+              <div className='flex gap-2 px-7 py-5'>
+                <CiSquarePlus className='mt-1 text-purple-600' style={{ fontSize: "20px" }} />
+                <div className='text-gray-500'>Add More Fields</div>
+              </div>
+              <div className='flex gap-2 px-7'>
+                <div><AiOutlineDollarCircle className='w-4 h-4 mt-1 text-purple-600' /></div>
+                <div className='text-gray-500'>Show Total In Words</div>
+              </div>
+              <div className='grid grid-cols-1 px-7 mt-4'>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                  <div><LuSignature className='text-purple-600' /></div>
+                  <div>Add Signature</div>
                 </div>
               </div>
-              <div className=' mt-5'>
-                <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mx-7 gap-5'>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                    <div><CiSquarePlus className='text-purple-600' /></div>
-                    <div>Add Terms & Conditions</div>
-                  </div>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
-                    <div><TbNotes className='text-purple-600' /></div>
-                    <div>Add Notes</div>
-                  </div>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                    <div><IoDocumentOutline className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                    <div>Add Documents</div>
-                  </div>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                    <div><TbNotes className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                    <div>Add Additional Info</div>
-                  </div>
-                  <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
-                    <div><PiGridFourLight className='text-purple-600' style={{ fontSize: "20px" }} /></div>
-                    <div>Add Contact Details</div>
-                  </div>
-                </div>
-              </div>
-              <button type='submit' className='bg-[#E6007B] text-white my-7 flex justify-center items-center mx-auto w-40 mt-7 h-10 rounded-md'>
-                Save & Continue
-              </button>
             </div>
-          ))}
+            <div className=' mt-5'>
+              <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 mx-7 gap-5'>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                  <div><CiSquarePlus className='text-purple-600' /></div>
+                  <div>Add Terms & Conditions</div>
+                </div>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-3'>
+                  <div><TbNotes className='text-purple-600' /></div>
+                  <div>Add Notes</div>
+                </div>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                  <div><IoDocumentOutline className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                  <div>Add Documents</div>
+                </div>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                  <div><TbNotes className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                  <div>Add Additional Info</div>
+                </div>
+                <div className='flex border border-gray-400 border-dashed p-1 rounded-md justify-center items-center gap-1'>
+                  <div><PiGridFourLight className='text-purple-600' style={{ fontSize: "20px" }} /></div>
+                  <div>Add Contact Details</div>
+                </div>
+              </div>
+            </div>
+            <button type='submit' className='bg-[#E6007B] text-white my-7 flex justify-center items-center mx-auto w-40 mt-7 h-10 rounded-md'>
+              Save & Continue
+            </button>
+          </div>
+          {/* ))} */}
         </div>
       </form>
       <div>

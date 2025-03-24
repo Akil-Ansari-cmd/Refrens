@@ -31,7 +31,7 @@ const Login = () => {
             </div>
             <div className='flex flex-col items-center justify-center'>
                 <div className='text-2xl font-semibold'>Login to your Refrens account</div>
-                <div className='border border-gray-200 my-7 w-[30%] rounded-sm p-1 flex justify-center items-center'>
+                <div className='border border-gray-200 my-7 md:w-[30%] w-[70%] rounded-sm p-1 flex justify-center items-center'>
                     <div className='flex'>
                         <div><FcGoogle className='mt-1' /></div>
                         <div>Sign in With Google</div>
