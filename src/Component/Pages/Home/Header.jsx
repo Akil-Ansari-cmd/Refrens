@@ -7,7 +7,7 @@ import Body4 from './Body4';
 import Footer from './Footer';
 const Header = () => {
   return (
-    <div>
+    <div className=''>
       <Shared />
       <Body />
       <Body4/>

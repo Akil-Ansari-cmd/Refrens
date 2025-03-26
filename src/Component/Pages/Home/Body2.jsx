@@ -67,7 +67,7 @@ const Body2 = () => {
   console.log("first", formik);
 
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
       <div className='md:text-lg text-base flex items-center justify-center h-14 bg-[#E9E0F9]'>
         Trusted & Loved by 1 Lakh+ businesses in India
       </div>
