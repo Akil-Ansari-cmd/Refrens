@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
+import { Link } from 'react-scroll';
 
 const Body4 = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -43,8 +44,10 @@ const Body4 = () => {
                     </div>
                 ))}
             </div>
-            <div className='bg-[#E6007B] font-semibold my-10 text-white px-6 flex justify-center items-center mx-auto w-fit h-12 rounded-md'>
-                Make Quotation For Free
+            <div className='bg-[#E6007B] font-semibold cursor-pointer my-10 text-white px-6 flex justify-center items-center mx-auto w-fit h-12 rounded-md'>
+                <Link to="targetSection" smooth={true} duration={500}>
+                    Make Quotation For Free
+                </Link>
             </div>
         </div>
     );

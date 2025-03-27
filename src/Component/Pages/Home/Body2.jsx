@@ -71,10 +71,10 @@ const Body2 = () => {
       <div className='md:text-lg text-base flex items-center justify-center h-14 bg-[#E9E0F9]'>
         Trusted & Loved by 1 Lakh+ businesses in India
       </div>
-      <div className='mt-14 md:text-4xl text-xl flex justify-center items-center'>
+      <div  id="targetSection"  className='mt-14 md:text-4xl text-xl flex justify-center items-center'>
         Make Your Quotation in Less than 2 Minutes
       </div>
-      <div className='flex justify-center items-center mt-7'>
+      <div  className='flex justify-center items-center mt-7'>
         <div className='flex gap-3'>
           <div className='h-5 w-5 flex justify-center items-center text-white rounded-full bg-[#7D3BDF] mt-0.5'>1</div>
           <div>Add Quotation Details</div>
@@ -87,7 +87,7 @@ const Body2 = () => {
         </div>
         <div><IoInformationCircleOutline className='text-gray-400  md:ml-5 ml-0' /></div>
       </div>
-      <form onSubmit={formik.handleSubmit}>
+      <form  onSubmit={formik.handleSubmit}>
         <div className='mt-14 h-fit
        pb-6 xl:mx-32 md:mx-16 mx-2 border border-gray-200 shadow-lg rounded-lg'>
           <div className='pt-10 text-4xl font-semibold mx-auto border-b border-black border-dotted w-fit'>Quotation</div>

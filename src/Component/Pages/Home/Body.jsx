@@ -1,7 +1,18 @@
 import React from 'react'
 import { FaArrowDown } from "react-icons/fa6";
+// import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Body2 from './Body2';
+import { Link } from 'react-scroll';
 const Body = () => {
+    // const smoothScroll = (e) => {
+    //     e.preventDefault(); // Prevent default anchor behavior
+    //     const targetId = e.target.getAttribute("href").substring(1); // Get section ID
+    //     const targetElement = document.getElementById(targetId);
+
+    //     if (targetElement) {
+    //       targetElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll
+    //     }
+    //   };
     return (
         <div>
             <div className='lg:flex grid justify-between py-20 xl:px-28 lg:px-16 md:px-28 px-10 text-white bg-[#7D3BDF] h-[100%]'>
@@ -18,8 +29,10 @@ const Body = () => {
                     <div className='lg:hidden block px-0 space-y-3'>
                         <div className='text-lg text-center font-semibold'>Create & Manage Unlimited Estimates and Quotations for FREE.</div>
                     </div>
-                    <div className='bg-[#E6007B] hidden font-semibold px-4 w-64 h-12 gap-2 mt-2 rounded-md lg:flex justify-center items-center'>
-                        <div>Make Your First Quotation</div>
+                    <div className='bg-[#E6007B] cursor-pointer hidden font-semibold px-4 w-64 h-12 gap-2 mt-2 rounded-md lg:flex justify-center items-center'>
+                        <Link to="targetSection" smooth={true} duration={500}>
+                            Make Your First Quotation
+                        </Link>
                         <div><FaArrowDown /></div>
                     </div>
                     <div className='bg-[#E6007B] mx-auto my-5 lg:hidden font-semibold px-4 w-64 h-12 gap-2 rounded-md flex justify-center items-center'>
