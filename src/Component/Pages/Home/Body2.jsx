@@ -18,16 +18,23 @@ const Body2 = () => {
       { id: Date.now(), name: "", quantity: 1, rate: 1, amount: 1 },
     ]);
   };
-
+  
   const updateItem = (id, field, value) => {
-    const updatedItems = formik.values.items.map((item) =>
-      item.id === id
-        ? { ...item, [field]: value, amount: field === "quantity" || field === "rate" ? value * item.rate : item.amount }
-        : item
-    );
+    const updatedItems = formik.values.items.map((item) => {
+      if (item.id === id) {
+        const updatedItem = { ...item, [field]: value };
+        if (field === "quantity" || field === "rate") {
+          updatedItem.amount = updatedItem.quantity * updatedItem.rate;
+        }
+  
+        return updatedItem;
+      }
+      return item;
+    });
+  
     formik.setFieldValue("items", updatedItems);
   };
-
+  
   const removeItem = (id) => {
     formik.setFieldValue(
       "items",
