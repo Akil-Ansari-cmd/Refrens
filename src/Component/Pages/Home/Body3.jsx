@@ -42,7 +42,7 @@ const Body3 = () => {
         <div className='lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-1 md:px-28 px-14 gap-4 mt-10'>
           <div>
             <div><img className='md:mx-0 mx-auto' src='https://assets.refrens.com/make_quotation_online_with_quotation_maker_bf5e4961d9.svg' /></div>
-            <div className='text-white py-5 text-xl font-semibold'>Simple & Easy Quotation</div>
+            <div className='text-white py-7 text-xl font-semibold'>Simple & Easy Quotation</div>
             <div className='text-gray-400'>Create simple-looking quotations and beautiful estimates easily without any hassle.</div>
           </div>
           <div>
@@ -62,7 +62,7 @@ const Body3 = () => {
           </div>
           <div>
             <div><img className='md:mx-0 mx-auto' src='https://assets.refrens.com/client_management_ed7174b59f.svg' /></div>
-            <div className='text-white py-5 text-xl font-semibold'>Client Management</div>
+            <div className='text-white py-6 text-xl font-semibold'>Client Management</div>
             <div className='text-gray-400'>Manage and track brief statements of all estimates and quotations in one place.</div>
           </div>
           <div>
